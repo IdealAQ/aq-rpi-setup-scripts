@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# development in progress
+# development in progress.
 
 if [ -z "${AQ_FRP_PORT}" ]; then
   echo "AQ_FRP_PORT is not set"

@@ -5,4 +5,4 @@ read PORT
 
 echo "PORT: , $PORT.
 
-echo 'export AQ_FRP_PORT="$PORT"' >> ~/.bashrc
+echo 'export AQ_FRP_PORT=$PORT' >> ~/.bashrc

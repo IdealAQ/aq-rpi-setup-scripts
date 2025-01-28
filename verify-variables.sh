@@ -2,6 +2,7 @@
 
 STATUS = 0
 
+# should not be combined with set-variables.sh?
 echo "Verifying all required environmental variables are set."
 echo "..."
 if [ -z "${AQ_FRP_PORT}" ]; then

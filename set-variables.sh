@@ -1,47 +1,45 @@
 #!/bin/bash
 
-# DIR="~/aq/scripts"
-
-# if [ -d "$DIR" ]; then
-#   echo "The directory '$DIR' exists."
-# else
-#   echo "ERROR: The directory '$DIR' does not exist."
-#   exit 1
-# fi
-
-
 variables=(
   "AQ_FRP_PORT,Port to be used for FRP"
   "AQ_DEVICE_ID,Device identifier"
 )
 
-for variable in "${variables[@]}"; do
+echo "verifying if all variables are set..."
+echo ""
+printf "%-20s %-15s %-10s \n" "Name" "Value" "Description"
+echo "---------------------------------------------------------------------"
+missing=()
+
+for index in "${!variables[@]}"; do
+  variable="${variables[$index]}"
   IFS=',' read -r name description <<< "$variable"
-  # check if variable is set already
-  if [ -z "${!name}" ]; then
-    echo "${name} is not set"
+  if [ -z "${!name}" ]; then # check if variable is set already
+    missing+=$index
+    printf "%-20s %-15s %-10s \n" "${name}" "< MISSING!!! >" "${description}"
   else
-    echo "${name} is set to '${!name}'"
+    printf "%-20s %-15s %-10s \n" "${name}" "${!name}" "${description}"
   fi
 done
 
-# echo "checking if the variables are already set"
-# echo "..."
+echo ""
 
+if [ ${#missing[@]} -eq 0 ]; then
+  echo "All variables are set!"
+  return
+fi
 
-# echo "Please enter the PORT to be used for FRP:"
-# read PORT
+echo ""
+echo "Set missing variables..."
+echo ""
 
-# echo "AQ_FRP_PORT: , $PORT."
+for missing_index in "${missing}"; do
+  missing_variable="${variables[$missing_index]}"
+  IFS=',' read -r name description <<< "$missing_variable"
 
-# echo "Please enter the DEVICE NUMBER:"
-# read DEVICE_NUMBER
+  echo "Please, enter ${name} (${description})"
+  read value
+  echo "export ${name}=\"$value\"" >> ~/.bashrc
+done
 
-# echo "AQ_DEVICE_NUMBER: , $DEVICE_NUMBER."
-
-
-# echo "export AQ_FRP_PORT=\"$PORT\"" >> ~/.bashrc
-# # AQ_FRP_ADDRESS
-# echo "export AQ_DEVICE_NUMBER=\"$DEVICE_NUMBER\"" >> ~/.bashrc
-
-# . ~/.bashrc
+source ~/.bashrc

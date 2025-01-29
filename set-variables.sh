@@ -32,10 +32,10 @@ if [ ${#missing[@]} -eq 0 ]; then
 fi
 
 echo ""
-echo "Set missing variables..."
+echo "Set (${#missing[@]}) missing variables..."
 echo ""
 
-for missing_index in "${missing}"; do
+for missing_index in "${missing[@]}"; do
   missing_variable="${variables[$missing_index]}"
   IFS=',' read -r name description <<< "$missing_variable"
   echo "Please, enter ${name} (${description}):"

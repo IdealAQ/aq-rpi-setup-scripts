@@ -1,31 +1,47 @@
-#!/bin/sh
+#!/bin/bash
 
-DIR="~/aq/scripts"
+# DIR="~/aq/scripts"
 
-if [ -d "$DIR" ]; then
-  echo "The directory '$DIR' exists."
-else
-  echo "ERROR: The directory '$DIR' does not exist."
-  exit 1
-fi
-
-echo "checking if the variables are already set"
-echo "..."
+# if [ -d "$DIR" ]; then
+#   echo "The directory '$DIR' exists."
+# else
+#   echo "ERROR: The directory '$DIR' does not exist."
+#   exit 1
+# fi
 
 
-echo "Please enter the PORT to be used for FRP:"
-read PORT
+variables=(
+  "AQ_FRP_PORT,Port to be used for FRP"
+  "AQ_DEVICE_ID,Device identifier"
+)
 
-echo "AQ_FRP_PORT: , $PORT."
+for variable in "${variables[@]}"; do
+  IFS=',' read -r name description <<< "$variable"
+  # check if variable is set already
+  if [ -z "${!name}" ]; then
+    echo "${name} is not set"
+  else
+    echo "${name} is set to '${!name}'"
+  fi
+done
 
-echo "Please enter the DEVICE NUMBER:"
-read DEVICE_NUMBER
-
-echo "AQ_DEVICE_NUMBER: , $DEVICE_NUMBER."
+# echo "checking if the variables are already set"
+# echo "..."
 
 
-echo "export AQ_FRP_PORT=\"$PORT\"" >> ~/.bashrc
-# AQ_FRP_ADDRESS
-echo "export AQ_DEVICE_NUMBER=\"$DEVICE_NUMBER\"" >> ~/.bashrc
+# echo "Please enter the PORT to be used for FRP:"
+# read PORT
 
-source ~/.bashrc
+# echo "AQ_FRP_PORT: , $PORT."
+
+# echo "Please enter the DEVICE NUMBER:"
+# read DEVICE_NUMBER
+
+# echo "AQ_DEVICE_NUMBER: , $DEVICE_NUMBER."
+
+
+# echo "export AQ_FRP_PORT=\"$PORT\"" >> ~/.bashrc
+# # AQ_FRP_ADDRESS
+# echo "export AQ_DEVICE_NUMBER=\"$DEVICE_NUMBER\"" >> ~/.bashrc
+
+# . ~/.bashrc

@@ -33,5 +33,14 @@ If some variables are not set, it prompts their values.
 | AQ_GROUP              | Group of user to run FRP service | aq      |                |
 
 
-> to update already set variable, you must manually remove the variable
+> **Note:** to update already set variable, you must manually remove the variable
 > by editing ~/.bashrc file, rebooting `sudo reboot` and rerunning the script.
+
+### frp-setup.sh
+> **Note:** SSH must be enabled in Raspberry Pi Configuration Interfaces
+Downloads, installs and configures frps.service which enables remote access via ssh.
+
+Use the following command to execute:
+```shell
+# TODO: to be provided when development and testing is finished
+```

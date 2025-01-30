@@ -27,3 +27,5 @@ If some variables are not set, it prompts their values.
 | AQ_FRP_SERVER_PORT    | FRP server port    |
 | AQ_FRP_DEVICE_PORT    | FRP device port    |
 
+> to update already set variable, you must manually remove the line with the variable
+> by editing ~/.bashrc file and rerunning the script.

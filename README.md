@@ -46,6 +46,12 @@ Request the veriable values from the admin if their values are not known.
 Downloads, installs and configures frps.service which enables remote access via ssh.
 Installation process follows instructions in [fracpete/rpi-remote-access](https://github.com/fracpete/rpi-remote-access) GitHub repository.
 
+**Flow:**
+1. executes ./set-variables.sh which verifies if all required environmental variables are set
+2. ...
+3. ...
+4. ...
+
 Use the following command to execute:
 ```shell
 . ./frp-setup.sh

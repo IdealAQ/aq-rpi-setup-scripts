@@ -50,4 +50,4 @@ Use the following command to execute:
 ```shell
 . ./frp-setup.sh
 ```
-**The dot "." at the beginning of the command is important!!!**
+> **Note:** The dot "." at the beginning of the command is important!!!

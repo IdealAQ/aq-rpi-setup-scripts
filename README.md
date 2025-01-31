@@ -42,7 +42,9 @@ Request the veriable values from the admin if their values are not known.
 
 ### frp-setup.sh
 > **Note:** SSH must be enabled in Raspberry Pi Configuration Interfaces
+
 Downloads, installs and configures frps.service which enables remote access via ssh.
+Installation process follows instructions in [fracpete/rpi-remote-access](https://github.com/fracpete/rpi-remote-access) GitHub repository.
 
 Use the following command to execute:
 ```shell

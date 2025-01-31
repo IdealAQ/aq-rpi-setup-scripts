@@ -48,9 +48,9 @@ Installation process follows instructions in [fracpete/rpi-remote-access](https:
 
 **Flow:**
 1. executes [./set-variables.sh](#set-variablessh) which verifies if all required environmental variables are set
-2. ...
-3. ...
-4. ...
+2. downloads and installs [frp](https://github.com/fatedier/frp)
+3. sets up frp config
+4. runs frp as a service
 
 Use the following command to execute:
 ```shell

@@ -48,5 +48,6 @@ Installation process follows instructions in [fracpete/rpi-remote-access](https:
 
 Use the following command to execute:
 ```shell
-# TODO: to be provided when development and testing is finished
+. ./frp-setup.sh
 ```
+**The dot "." at the beginning of the command is important!!!**

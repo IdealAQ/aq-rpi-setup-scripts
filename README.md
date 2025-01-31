@@ -1,15 +1,15 @@
 # RPi Set up scripts
 
 ## Instructions
-In Raspberry Pi, create directory `~/aq/setup-scripts` if does not exist
+In Raspberry Pi, create directory `~/aq/scripts` if does not exist
 
 ```shell
-mkdir -p ~/aq/setup-scripts
+mkdir -p ~/aq/scripts
 ```
 
 navigate to the directory
 ```shell
-cd ~/aq/setup-scripts
+cd ~/aq/scripts
 ```
 
 and clone this repository in it

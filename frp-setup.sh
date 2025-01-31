@@ -24,12 +24,14 @@ fi
 
 cd /opt
 
+
+
 sudo wget https://github.com/fatedier/frp/releases/download/v0.49.0/frp_0.49.0_linux_arm.tar.gz
 sudo tar -xzf frp_0.49.0_linux_arm.tar.gz
 sudo ln -s frp_0.49.0_linux_arm frp
 
-envsubst < ~/aq/scripts/templates/template_etc_frpc.ini > /etc/frpc.ini
-envsubst < ~/aq/scripts/templates/template_etc_systemd_system_frpc.service > /etc/systemd/system/frpc.service
+envsubst < ~/aq/scripts/templates/template_etc_frpc.ini | sudo tee /etc/frpc.ini
+envsubst < ~/aq/scripts/templates/template_etc_systemd_system_frpc.service | sudo tee /etc/systemd/system/frpc.service
 
 sudo systemctl enable /etc/systemd/system/frpc.service
 sudo systemctl start frpc.service

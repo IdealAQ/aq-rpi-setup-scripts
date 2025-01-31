@@ -20,6 +20,12 @@ git clone git@github.com:IdealAQ/aq-rpi-setup-scripts.git .
 This will pull scripts from this repository to the file
 
 ## Scripts
+### [update-scripts.sh](./update-scripts.sh)
+Updates the set up scripts.
+
+> **Note: ** Before running any script, run this script first to make sure the scripts are up-to-date.
+
+run with `./update-scripts.sh`
 
 ### [set-variables.sh](./set-variables.sh)
 Checks if the variables required to set up FRP remote access are set.

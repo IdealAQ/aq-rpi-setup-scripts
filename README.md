@@ -21,7 +21,7 @@ This will pull scripts from this repository to the file
 
 ## Scripts
 
-### set-variables.sh
+### [set-variables.sh](./set-variables.sh)
 Checks if the variables required to set up FRP remote access are set.
 If some variables are not set, it prompts their values.
 
@@ -40,7 +40,7 @@ Request the veriable values from the admin if their values are not known.
 > **Note:** to update already set variable, you must manually remove the variable
 > by editing ~/.bashrc file, rebooting `sudo reboot` and rerunning the script.
 
-### frp-setup.sh
+### [frp-setup.sh](./frp-setup.sh)
 > **Note:** SSH must be enabled in Raspberry Pi Configuration Interfaces
 
 Downloads, installs and configures frps.service which enables remote access via ssh.

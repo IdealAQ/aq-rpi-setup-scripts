@@ -1,10 +1,15 @@
 # RPi Set up scripts
 
 ## Instructions
-In Raspberry Pi, create directory <TODO:> 
+In Raspberry Pi, create directory `~/aq/setup-scripts` if does not exist
 
 ```shell
-# TODO
+mkdir -p ~/aq/setup-scripts
+```
+
+navigate to the directory
+```shell
+cd ~/aq/setup-scripts
 ```
 
 and clone this repository in it
@@ -12,7 +17,7 @@ and clone this repository in it
 git clone git@github.com:IdealAQ/aq-rpi-setup-scripts.git .
 ```
 
-This will pull scripts in this repository to the file
+This will pull scripts from this repository to the file
 
 ## Scripts
 

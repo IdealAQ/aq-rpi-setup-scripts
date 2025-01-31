@@ -25,8 +25,7 @@ This will pull scripts from this repository to the file
 Checks if the variables required to set up FRP remote access are set.
 If some variables are not set, it prompts their values.
 
-",,aq"
-  "AQ_USER,Group of user to run FRP service,aq"
+Request the parameter values from the admin if their values are not known.
 
 | variable              | description                      | default | note           |
 |-----------------------|----------------------------------|---------|----------------|

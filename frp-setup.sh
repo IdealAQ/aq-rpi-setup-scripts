@@ -1,5 +1,15 @@
 #!/bin/bash
 
+echo "Checking if frpc.service is being sourced..."
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    echo "Error: This script must be sourced using '. ./frp-setup.sh' or 'source ./frp-setup.sh'"
+    exit 1
+fi
+
+echo "Script is sourced correctly!"
+echo ""
+
 echo "Checking if frpc.service exists..."
 if systemctl list-units --type=service --all | grep -q "frpc.service"; then
     echo "frpc.service exists."
